@@ -34,9 +34,9 @@ app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 // Load routes
 app.use('/', indexRouter);
-app.use('/data', dataRouter);
-app.use('/formdata',formDataRouter);
-app.use('/manage',manageRouter);
+app.use('/co2/data', dataRouter);
+app.use('/co2/formdata',formDataRouter);
+app.use('/co2/manage',manageRouter);
 
 
 app.listen(port, () => {

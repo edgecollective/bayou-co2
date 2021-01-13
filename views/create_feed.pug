@@ -1,0 +1,52 @@
+doctype html
+html
+    head
+        meta(charset='UTF-8')
+        title Bayou
+        link(rel='stylesheet', href='/style.css')
+
+h1 <a href="/co2">Bayou-CO2</a>
+
+body
+
+h2 Simple, Free & Open Source CO2 Monitoring Data & Hardware
+
+p.blurb <a href="/">Bayou-CO2</a> is designed to provide a simple, non-proprietary, 'open science' approach to capturing, storing, and retrieving CO2 sensor data. We created Bayou-CO2 when inspired by recent work (e.g. by Jimenez et al.) indicating that monitoring indoor CO2 levels might (in some contexts) help to assess the risk of airborne SARS-CoV-2 transmission.
+
+p.blurb <b>Open Data</b>. All data from Bayou can be downloaded via CSV or JSON, and is accessible via a simple link.  
+
+p.blurb <b>Free and Open Source Codebase</b>. Bayou's source code is freely availble <a href="">here</a>. You can use the Bayou codebase to run a data server on your own hosting service (a home PC, or in the cloud).  You are welcome to fork the codebase, modify it, and improve it -- please do!
+
+p.blurb <b>Funded through donations</b>. We rely on donations and pay-as-you-can arrangements to support data hosting, as well as hardware and software development. To help keep this site running, please visit our site on Open Collective <a href="https://opencollective.com/edgecollective">here</a>. Cheers!
+
+h2 Try it out:
+form(action='/co2/manage' method='POST')
+    fieldset
+        h3 Create a New CO2 Data Feed
+        label New Data Feed Name: 
+        input#feed_name(type='text' name='feed_name' placeholder='Living room, Nortwest side' required='')
+        br
+        br
+        button(type='submit') Create new feed
+form(action='/co2/formData' method='POST')
+    fieldset
+        h3 View an Existing CO2 Data Feed
+        label Show Data Feed w/ Public Key: 
+        input#feed_id_page(type='text' name='feed_id' placeholder='421f1baf5ceccaaa9ad0891f4c96710062106b92189bf907' required='')
+        br
+        br
+        // <button type ="reset">Reset</button>
+        button(type='submit') View Data
+
+
+p.h3_mock Build or Purchase a CO2 Sensor Kit
+
+p.blurb We have developed an <a href="">Open Hardware CO2 monitoring kit</a>, based on an ESP32 microcontroller and an SCD30 CO2 sensor.  The design files, code, and instructions for building are all available; we are also able to distribute pre-assembled kits that are pre-programmed to send CO2 data to Bayou</b>. Click below to purchase a kit, or to learn how to source the parts for your own DIY build:
+
+p.kit <a href=""><img src="https://edgecollective.io/img/co2/rev_e_collection.png"></a>
+
+p.kit <a href="/">Build or Purchase a PVOS CO2 Sensor</a>
+
+<hr>
+
+<a href="/">Back to Bayou Home</a>

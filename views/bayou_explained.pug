@@ -1,0 +1,43 @@
+doctype html
+html
+    head
+        meta(charset='UTF-8')
+        title Bayou
+        link(rel='stylesheet', href='/style.css')
+
+<a href="/">Back to Bayou Home</a>
+
+<hr>
+
+h1 How Bayou works:
+
+p.blurb  Any new feed created with Bayou is assigned a PUBLIC_KEY -- a long, random string, that uniquely identifies the feed. A PUBLIC_KEY looks like this:
+
+<pre><code>
+<b>Feed Public Key (format):</b> [64 character random string, assigned to feed by Bayou when feed is created]<br>
+<b>Feed Public Key (example):</b> 57d9d971641013e00728675e60c09d2115d8b949f3361ea1
+</pre></code>
+
+p.blurb You then retrieve data and post data using URLS that reference that PUBLIC_KEY. 
+
+p.blurb For example, Bayou CO2 sensor feeds, once created, have home pages that look like this:
+
+<pre><code>
+<b>Feed Home Page (format):</b> http://data.pvos.org/co2/data/[FEED PUBLIC KEY]<br>
+<b>Feed Home Page (example):</b> <a href="http://data.pvos.org/co2/data/57d9d971641013e00728675e60c09d2115d8b949f3361ea1">http://data.pvos.org/co2/data/57d9d971641013e00728675e60c09d2115d8b949f3361ea1</a>
+</pre></code>
+
+p.blurb You can then retrieve CSV data from the feed by appending '/csv' to the feed's Home Page link, like this:
+
+<pre><code>
+<b>Feed CSV Download (format):</b> http://data.pvos.org/co2/data/[PUBLIC_KEY]/csv<br>
+<b>Feed CSV Download:</b> <a href="http://data.pvos.org/co2/data/[57d9d971641013e00728675e60c09d2115d8b949f3361ea1]/csv">http://data.pvos.org/co2/data/57d9d971641013e00728675e60c09d2115d8b949f3361ea1/csv</a>
+</pre></code>
+
+p.blurb Which, in our example, would look like this:
+<pre><code>
+<b>Feed JSON Download (format)::</b> http://data.pvos.org/co2/data/[PUBLIC_KEY]/json<br>
+<b>Feed JSON Download:</b> <a href="http://data.pvos.org/co2/data/57d9d971641013e00728675e60c09d2115d8b949f3361ea1json">http://data.pvos.org/co2/data/57d9d971641013e00728675e60c09d2115d8b949f3361ea1/json</a>
+</pre></code>
+        
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3588DGfwW04" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

@@ -5,7 +5,7 @@ html
         title Bayou
         link(rel='stylesheet', href='/style.css')
 
-<a href="/">Back to Bayou Home</a>
+<a href="/co2">Back to Bayou-CO2</a>
 
 <hr>
 
@@ -15,11 +15,11 @@ h1 Home Page for Bayou-CO2 Feed: "#{feed_name}"
 <b>Name:</b> "#{feed_name}"<br>
 <b>Public Key:</b> #{feed_pubkey} <br>
 <b>Private Key:</b> [Secret]<br>
-<b>Home Page:</b> <a href="/data/#{feed_pubkey}">http://#{base_url}/data/#{feed_pubkey}</a>
+<b>Home Page:</b> <a href="/co2/data/#{feed_pubkey}">http://#{base_url}/co2/data/#{feed_pubkey}</a>
 </pre></code>
 
 h1 Downloading Data:
 
-p <b>All feed data</b>: <a href="/data/#{feed_pubkey}/csv/">CSV</a> | <a href="/data/#{feed_pubkey}/json/">JSON</a>
+p <b>All feed data</b>: <a href="/co2/data/#{feed_pubkey}/csv/">CSV</a> | <a href="/co2/data/#{feed_pubkey}/json/">JSON</a>
 
-p <b>Most recent upload only</b>: <a href="/data/#{feed_pubkey}/json/">JSON</a>
+p <b>Most recent upload only</b>: <a href="/co2/data/#{feed_pubkey}/json/">JSON</a>
