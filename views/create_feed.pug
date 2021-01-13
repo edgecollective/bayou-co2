@@ -15,18 +15,18 @@ p.blurb <b>Motivation.</b> <a href="/co2">Bayou-CO2</a> is designed to provide a
 
 p.blurb <b>Getting CO2 data online:</b> You can get CO2 data online using Bayou-CO2 thusly:
 ul
-li <a href="#step1">Step 1: Set up a free data feed on Bayou-CO2</a>
+li <a href="#step1">Step 1: Set up a free CO2 data feed</a>
 li <a href="#step2">Step 2: Set up a compatible CO2 monitor</a>
 li <a href="#step3">Step 3: View or download your CO2 data</a>
 
 <hr>
 
-h2 <a name="step1"></a> Step 1: Setting up a data feed on Bayou
+h2 <a name="step1"></a> Step 1: Set up a new CO2 data feed
 
 form(action='/co2/manage' method='POST')
     fieldset
         h3 Create a New CO2 Data Feed
-        label New CO2 Data Feed Name: 
+        label New Feed Name: 
         input#feed_name(type='text' name='feed_name' placeholder='Living room, Nortwest side' required='')
         br
         br
@@ -34,7 +34,7 @@ form(action='/co2/manage' method='POST')
 
 <hr>  
 
-h2 <a name="step2"></a> Step 2: Setting up a compatible CO2 monitor
+h2 <a name="step2"></a> Step 2: Set up a compatible CO2 monitor
 
 p.blurb <b>General guidelines.</b> You can send data to Bayou via <b>any device</b> that is capable of performing an HTTP POST. This includes Python scripts on PCs, as well as many available programmable microcontrollers. You can find general guidelines for how to construct the proper HTTP POST format, with some code examples, <a href="">here</a>.
 
@@ -51,7 +51,7 @@ h2 <a name="step3"></a>Step 3: View your CO2 data
 form(action='/co2/formData' method='POST')
     fieldset
         h3 View an Existing CO2 Data Feed
-        label View CO2 Data for Feed w/ Key: 
+        label View Data for Feed w/ Key: 
         input#feed_id_page(type='text' name='feed_id' placeholder='421f1baf5ceccaaa9ad0891f4c96710062106b92189bf907' required='')
         br
         br
