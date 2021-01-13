@@ -14,6 +14,12 @@ header{
 	font-size: 15px;
 }
 
+h2{
+	margin-top: 2px;
+    text-align: left;
+    padding-left: 20px;
+	background-color: #80bfff;
+}
 
 h3{
 	margin-top: 2px;
@@ -21,9 +27,9 @@ h3{
 	background-color: #80bfff;
 }
 
-h5{
-	margin-top: 2px;
-	text-align: left;
+h4{
+    text-align: left;
+    padding-left: 20px;
 	background-color: pink;
 }
 
