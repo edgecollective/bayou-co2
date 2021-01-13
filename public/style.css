@@ -24,8 +24,8 @@ h2{
 
 h3{
 	margin-top: 2px;
-	text-align: left;
-    background-color: #80bfff;
+	text-align: center;
+    #background-color: #80bfff;
     font-size: 18px;
 }
 
@@ -55,7 +55,8 @@ form{
 	width: 80%;
 	display: inline-block;
     margin: 10px;
-    text-align:left;
+    text-align:center;
+    background-color: pink;
 }
 
 footer{
