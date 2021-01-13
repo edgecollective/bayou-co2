@@ -4,6 +4,8 @@ const fastcsv = require("fast-csv");
 const CsvParser = require("json2csv").Parser;
 var networkUtil = require('../utils/networkUtil');
 
+require('dotenv').config({ path: __dirname + '/.env' })
+var base_url = process.env['BASE_URL']
 
 const getFeedDetails = (feed_pubkey) => db.query('SELECT * FROM feeds WHERE public_key = $1', [feed_pubkey]).then(response => response.rows[0])
 .catch((err) => {
@@ -42,7 +44,7 @@ exports.getPage = function(req, res, next) { // NOW BY PUB_KEY
      getFeedDetails(String(req.params.feed_pubkey))
      .then((feed_params) => {
         console.log(feed_params);
-    res.render('data',{feed_pubkey:feed_params.public_key,feed_name:feed_params.name,base_url:ip});
+    res.render('data',{feed_pubkey:feed_params.public_key,feed_name:feed_params.name,base_url:base_url});
      }).catch((err) => {
         console.log("Something went wrong with getPage!");
        });
