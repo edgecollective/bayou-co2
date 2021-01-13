@@ -19,6 +19,12 @@ p.blurb <b>Free and Open Source Codebase</b>. Bayou's source code is freely avai
 
 p.blurb <b>Funded through donations</b>. We rely on donations and pay-as-you-can arrangements to support data hosting, as well as hardware and software development. To help keep this site running, please visit our site on Open Collective <a href="https://opencollective.com/edgecollective">here</a>. Cheers!
 
+h2 How it works:
+
+p.blurb Bayou is a simple server + database that allows users to create and store sensor 'data feeds' (records in a database). Each Bayou data feed has a unique 'key' associated with it (a 'public key') that allows you to easily access the feed's data (as CSV or JSON), as well as another unique 'key' (a 'private key') that allows you to post new data to it using common tools like Python scripts, or inexpensive microcontrollers. 
+
+p.blurb For more explanation -- including methods for sending and retrieving data to a feed, configuring microcontrollers to post to Bayou-CO2, and techniques for data analysis -- please see the <a href="/how-bayou-works/">'How Bayou Works'</a> page.
+
 h2 Try it out:
 form(action='/co2/manage' method='POST')
     fieldset
