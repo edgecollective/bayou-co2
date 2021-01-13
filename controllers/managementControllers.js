@@ -52,7 +52,7 @@ exports.postNewFeed = function(req, res, next) {
                         //use the IP address for the feed link; change this once we have a fixed URL:
                         var ip = networkUtil.getIp();
 
-                        res.status(200).render('feed',{feed_name: feed_name,feed_pubkey:public_key,private_key:private_key,base_url:base_url});//process.exit(0);
+                        res.status(200).render('feed_created',{feed_name: feed_name,feed_pubkey:public_key,private_key:private_key,base_url:base_url});//process.exit(0);
                     }
                 });
            });

@@ -9,8 +9,19 @@ router.get('/', function(req, res, next) {
 */
 
 router.get('/', function(req,res, next){
-  res.sendFile(path.join(__dirname,'../public/form.html')); //make this more robust?
+  //res.sendFile(path.join(__dirname,'../public/form.html')); //make this more robust?
+  res.render('landing');
 });
+
+router.get('/co2/', function(req,res, next){
+    //res.sendFile(path.join(__dirname,'../public/co2_form.html')); //make this more robust?
+    //res.render('landing');
+    res.render('create_feed');
+  });
+
+  router.get('/how-bayou-works/', function(req,res, next){
+    res.render('bayou_explained');
+      });
 
 router.get('/about/', function(req,res, next){
     res.render('about');
