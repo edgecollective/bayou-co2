@@ -11,9 +11,19 @@ body
 
 h3 Simple, Free & Open Source CO2 Monitoring Data & Hardware
 
+p.blurb <a href="/co2">Bayou-CO2</a> is designed to provide a simple, non-proprietary, 'open science' approach to capturing, storing, and retrieving CO2 sensor data. We created Bayou-CO2 when inspired by recent work (e.g. by <a href="https://www.medrxiv.org/content/10.1101/2020.09.09.20191676v1.full.pdf">Peng and Jimenez, Sep 9 2020</a>) indicating that monitoring indoor CO2 levels might (in some contexts) help to assess the risk of airborne SARS-CoV-2 transmission.
+
+p.blurb <b>Free and Open Source Codebase</b>. <a href="https://github.com/edgecollective/bayou-co2">Bayou-CO2's source code</a> is freely available (<a href="https://github.com/edgecollective/bayou-co2/blob/main/LICENSE">GPL-3.0 License</a>). You are free to run a <b>Bayou-CO2</b> data server on your own hosting service (a home PC, or in the cloud); you are also welcome to fork the codebase, modify it, and improve it -- please do!
+
+p.blurb <b>Funded through donations</b>. We rely on donations and pay-as-you-can arrangements to support data hosting, as well as hardware and software development. To help keep this site running, please visit our site on Open Collective <a href="https://opencollective.com/edgecollective">here</a>. Cheers!
+
 h2 How it works
 
-p.blurb <b>Bayou-CO2</b> (source eeeeeecode available <a href="https://github.com/edgecollective/bayou-co2">here</a>) is a simple server + database that allows users to create and store sensor data in a database as 'data feeds'.  Each data feed is associated with two unique, hard-to-guess 'keys' that allow you to access the feed's data (via a browser or script, as CSV or JSON), or add data to the via (via HTTP POST, using a wifi-enabled microcontroller and a CO2 sensor).
+p.blurb <b>Bayou-CO2</b> provides a simple server + database that allows users to create and store sensor data in a database as 'data feeds'.  
+
+p.blurb Each data feed is associated with two unique, hard-to-guess 'keys' that allow you to access the feed's data (via a browser or script, as CSV or JSON), or add data to the via (via HTTP POST, using a wifi-enabled microcontroller and a CO2 sensor).
+
+p.blurb Using this approach, <b>Bayou-CO2</b> provides (moderate) privacy for feed data (feeeds have hard-to-guess URLs), but make them easy for users to share with others if they wish; and we avoid the need for 'user accounts', making it possible for more people to use the data quickly and easily. 
 
 h2 Try it out!
 
@@ -47,17 +57,6 @@ p.kit <a href="https://edgecollective.io/posts/notes/co2/"><img src="https://edg
 
 p.kit <a href="https://edgecollective.io/posts/notes/co2/">Build or Purchase a PVOS CO2 Sensor</a>
 
-<hr>
-
-h2 About
-
-p.blurb <a href="/">Bayou-CO2</a> is designed to provide a simple, non-proprietary, 'open science' approach to capturing, storing, and retrieving CO2 sensor data. We created Bayou-CO2 when inspired by recent work (e.g. by Jimenez et al.) indicating that monitoring indoor CO2 levels might (in some contexts) help to assess the risk of airborne SARS-CoV-2 transmission.
-
-p.blurb <b>Open Data</b>. All data from Bayou can be downloaded via CSV or JSON, and is accessible via a simple link.  
-
-p.blurb <b>Free and Open Source Codebase</b>. Bayou's source code is freely availble <a href="https://github.com/edgecollective/bayou-co2">here</a>. You can use the Bayou codebase to run a data server on your own hosting service (a home PC, or in the cloud).  You are welcome to fork the codebase, modify it, and improve it -- please do!
-
-p.blurb <b>Funded through donations</b>. We rely on donations and pay-as-you-can arrangements to support data hosting, as well as hardware and software development. To help keep this site running, please visit our site on Open Collective <a href="https://opencollective.com/edgecollective">here</a>. Cheers!
 
 <hr>
 
