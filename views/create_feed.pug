@@ -13,16 +13,14 @@ h3 Simple, Free & Open Source CO2 Monitoring Data & Hardware
 
 h2 How it works
 
-p.blurb <b>Bayou-CO2</b> (source eeeeeecode available <a href="https://github.com/edgecollective/bayou-co2">here</a>) is a simple server + database that allows users to create and store sensor data in a database as 'data feeds'.  Each data feed is associated with two unique, hard-to-guess 'keys' that allow you to access the feed's data (via a browser or script, as CSV or JSON) or add data to the via (via HTTP POST, using a wifi-enabled microcontroller and a CO2 sensor).
-
-p.blurb When you create a new Bayou data feed, you'll be shown the feed's unique keys -- i.e. its PUBLIC_KEY and its PRIVATE KEY (they're just two long, random text strings.) You can then use the feed's PUBLIC_KEY to access the feed's data; you'll need both the PUBLIC_KEY and the PRIVATE_KEY to add data to the feed.
+p.blurb <b>Bayou-CO2</b> (source eeeeeecode available <a href="https://github.com/edgecollective/bayou-co2">here</a>) is a simple server + database that allows users to create and store sensor data in a database as 'data feeds'.  Each data feed is associated with two unique, hard-to-guess 'keys' that allow you to access the feed's data (via a browser or script, as CSV or JSON), or add data to the via (via HTTP POST, using a wifi-enabled microcontroller and a CO2 sensor).
 
 h2 Try it out!
 
 form(action='/co2/manage' method='POST')
     fieldset
         h3 Create a New CO2 Data Feed
-        label New Data Feed Name: 
+        label New CO2 Data Feed Name: 
         input#feed_name(type='text' name='feed_name' placeholder='Living room, Nortwest side' required='')
         br
         br
@@ -30,7 +28,7 @@ form(action='/co2/manage' method='POST')
 form(action='/co2/formData' method='POST')
     fieldset
         h3 View an Existing CO2 Data Feed
-        label Show Data Feed w/ Public Key: 
+        label View CO2 Data for Feed w/ Key: 
         input#feed_id_page(type='text' name='feed_id' placeholder='421f1baf5ceccaaa9ad0891f4c96710062106b92189bf907' required='')
         br
         br
