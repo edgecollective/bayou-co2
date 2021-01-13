@@ -11,17 +11,18 @@ html
 
 h2 Home Page for Feed "#{feed_name}"
 
+pre
+    code <a href="">http://#{base_url}/data/#{feed_pubkey}</a>
+
 p.high <b>Public Key:</b> #{feed_pubkey}
 p.high <b>Private Key:</b> [Secret]
-p.high <b>Home Page</b>: <a href="/data/#{feed_pubkey}">http://#{base_url}/data/#{feed_pubkey}</a>
 
-p In the future, you can access this feed at its <b>Home Page</b>, shown above, which is always constructed as:
-pre
-    code http://#{base_url}/data/[Feed Public Key]
-
-h2 Downloading feed data
+h2 Download Feed Data
 
 p <b>All feed data</b>: <a href="/data/#{feed_pubkey}/csv/">CSV</a> | <a href="/data/#{feed_pubkey}/json/">JSON</a>
 
 p <b>Most recent upload only</b>: <a href="/data/#{feed_pubkey}/json/">JSON</a>
 
+<hr>
+
+<a href="/">Back to Bayou Home</a>
