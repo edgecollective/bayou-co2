@@ -1,0 +1,21 @@
+doctype html
+html
+    head
+        meta(charset='UTF-8')
+        title Bayou
+        link(rel='stylesheet', href='/style.css')
+
+h1 You've created a new data feed!
+
+p.high <b>Name:</b> "#{feed_name}"
+p.high <b>Public Key:</b> #{feed_pubkey}
+p.high <b>Private Key:</b> #{private_key}
+p.high <b>Feed Home Page:</b> <a href="/data/#{feed_pubkey}">http://#{base_url}/data/#{feed_pubkey}</a>
+
+p.blurb (<b>PLEASE NOTE</b>: you should immediately record the above information -- these keys won't be shown again! Copy it and paste it somewhere safe -- e.g. to a local text file on your computer.)
+
+p.blurb From now on, you can always visit this feed's  <a href="/data/#{feed_pubkey}">home page</a>, where you can find out how to post and retrieve data.  
+
+<hr>
+
+<a href="/">Back to Bayou Home</a>

@@ -1,0 +1,97 @@
+body{
+    background-color: #cce6ff;
+    #font-family:sans-serif;
+    font-size: 15px;
+    width:50%;
+}
+header{
+	text-align: left;
+	height: 80px;
+    padding-top: 1px;
+    padding-left: 20px;
+	background-color: #3399ff;
+	color: #FFFFFF;
+	font-size: large;
+}
+
+
+h3{
+	margin-top: 2px;
+	text-align: center;
+	background-color: #80bfff;
+}
+
+h5{
+	margin-top: 2px;
+	text-align: left;
+	background-color: pink;
+}
+
+li {
+    width:60%;
+    margin-left: 10px;
+    font-size: medium;
+}
+form{
+	width: 100%;
+	display: inline-block;
+    margin: 20px;
+    text-align:left;
+}
+
+footer{
+	margin-top: 3%;
+	text-align: center;
+}
+
+.high{
+    background-color: lightgreen;
+    width:100%;
+    font-size: medium;
+    margin-left:20px;
+}
+
+img{
+    max-width:30%;
+margin-left:20px;
+max-height:100px;
+display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.blurb{
+    #background-color: lightgreen;
+    width:100%;
+    font-size: 15px;
+    margin-left: 20px;
+}
+
+.tinyblurb{
+    background-color: lightgreen;
+    width:100%;
+    font-size: 15px;
+    margin-left: 20px;
+}
+
+.kit{
+    #background-color:  lightgreen;
+    width:100%;
+    font-size: 16px;
+    margin-left: 20px;
+    text-align:center;
+}
+
+
+pre code {
+    background-color: #eee;
+    border: 1px solid #999;
+    display: block;
+    padding: 20px;
+    width:max-content;
+  }
+
+  @media screen and (max-width: 800px) {
+    .left, .main, .right {
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+  }
