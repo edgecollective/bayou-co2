@@ -9,23 +9,19 @@ h1 <a href="/co2">Bayou-CO2</a>
 
 body
 
-h3 Simple, Free & Open Source CO2 Monitoring Data & Hardware
+h2 Simple, Free & Open Source CO2 Monitoring
 
-p.blurb <a href="/co2">Bayou-CO2</a> is designed to provide a simple, non-proprietary, 'open science' approach to capturing, storing, and retrieving CO2 sensor data. We created Bayou-CO2 when inspired by recent work (e.g. by <a href="https://www.medrxiv.org/content/10.1101/2020.09.09.20191676v1.full.pdf">Peng and Jimenez, Sep 9 2020</a>) indicating that monitoring indoor CO2 levels might (in some contexts) help to assess the risk of airborne SARS-CoV-2 transmission.
+p.blurb <b>Motivation.</b> <a href="/co2">Bayou-CO2</a> is designed to provide a simple, non-proprietary, 'open science' approach to capturing, storing, and retrieving CO2 sensor data. We created Bayou-CO2 when inspired by recent work (e.g. by <a href="https://www.medrxiv.org/content/10.1101/2020.09.09.20191676v1.full.pdf">Peng and Jimenez, Sep 9 2020</a>) indicating that monitoring indoor CO2 levels might (in some contexts) help to assess the risk of airborne SARS-CoV-2 transmission.  
 
-p.blurb <b>Free and Open Source Codebase</b>. <a href="https://github.com/edgecollective/bayou-co2">Bayou-CO2's source code</a> is freely available (<a href="https://github.com/edgecollective/bayou-co2/blob/main/LICENSE">GPL-3.0 License</a>). You are free to run a <b>Bayou-CO2</b> data server on your own hosting service (a home PC, or in the cloud); you are also welcome to fork the codebase, modify it, and improve it -- please do!
+p.blurb <b>Getting CO2 data online:</b> You can get CO2 data online using Bayou-CO2 thusly:
+ul
+li <a href="#step1">Step 1: Set up a free data feed on Bayou-CO2</a>
+li <a href="#step2">Step 2: Set up a compatible CO2 monitor</a>
+li <a href="#step3">Step 3: View or download your CO2 data</a>
 
-p.blurb <b>Funded through donations</b>. We rely on donations and pay-as-you-can arrangements to support data hosting, as well as hardware and software development. To help keep this site running, please visit our site on Open Collective <a href="https://opencollective.com/edgecollective">here</a>. Cheers!
+<hr>
 
-h2 How it works
-
-p.blurb <b>Bayou-CO2</b> provides a simple server + database that allows users to create and store sensor data in a database as 'data feeds'.  
-
-p.blurb Each data feed is associated with two unique, hard-to-guess 'keys' that allow you to access the feed's data (via a browser or script, as CSV or JSON), or add data to the via (via HTTP POST, using a wifi-enabled microcontroller and a CO2 sensor).
-
-p.blurb Using this approach, <b>Bayou-CO2</b> provides (moderate) privacy for feed data (feeeds have hard-to-guess URLs), but make them easy for users to share with others if they wish; and we avoid the need for 'user accounts', making it possible for more people to use the data quickly and easily. 
-
-h2 Try it out!
+h2 <a name="step1"></a> Step 1: Setting up a data feed on Bayou
 
 form(action='/co2/manage' method='POST')
     fieldset
@@ -35,6 +31,23 @@ form(action='/co2/manage' method='POST')
         br
         br
         button(type='submit') Create new feed
+
+<hr>  
+
+h2 <a name="step2"></a> Step 2: Setting up a compatible CO2 monitor
+
+p.blurb <b>General guidelines.</b> You can send data to Bayou via <b>any device</b> that is capable of performing an HTTP POST. This includes Python scripts on PCs, as well as many available programmable microcontrollers. You can find general guidelines for how to construct the proper HTTP POST format, with some code examples, <a href="">here</a>.
+
+p.blurb <b>PVOS CO2 Monitor. </b>To make things easier for folks, we have developed an <a href="https://edgecollective.io/posts/notes/co2/">Open Hardware CO2 monitoring kit</a>, based on the popular WiFi+Bluetooth <a href="https://en.wikipedia.org/wiki/ESP32">Espressif ESP32 microcontroller</a> and the <a href="https://www.sensirion.com/en/environmental-sensors/carbon-dioxide-sensors/carbon-dioxide-sensors-co2/">Sensiron SCD30 CO2 sensor</a>.  You can either purchase the parts on your own and follow the build instructions we've put together, or buy a pre-assembled and pre-programmed device from us.  Click below to learn how to source the parts for your own DIY build, or to purchase a pre-assembled, pre-programmed kit:
+
+p.kit <a href="https://edgecollective.io/posts/notes/co2/"><img src="https://edgecollective.io/img/co2/rev_e_collection.png"></a>
+
+p.kit <a href="https://edgecollective.io/posts/notes/co2/">Build or Purchase a PVOS CO2 Sensor</a>
+
+<hr>  
+
+h2 <a name="step3"></a>Step 3: View your CO2 data
+
 form(action='/co2/formData' method='POST')
     fieldset
         h3 View an Existing CO2 Data Feed
@@ -45,29 +58,7 @@ form(action='/co2/formData' method='POST')
         // <button type ="reset">Reset</button>
         button(type='submit') View Data
 
-h2 Build or purchase a Bayou-compatible wireless CO2 monitoring kit
 
-p.blurb We have developed an <a href="https://edgecollective.io/posts/notes/co2/">Open Hardware CO2 monitoring kit</a>, based on the popular WiFi+Bluetooth <a href="https://en.wikipedia.org/wiki/ESP32">Espressif ESP32 microcontroller</a> and the <a href="https://www.sensirion.com/en/environmental-sensors/carbon-dioxide-sensors/carbon-dioxide-sensors-co2/">Sensiron SCD30 CO2 sensor</a>. 
-
-p.blurb The <a href="https://edgecollective.io/posts/notes/co2/">design files, code, and instructions</a> for building are all available; we are also able to distribute pre-assembled kits that are pre-programmed to send CO2 data to Bayou</b>. 
-
-p.blurb Click below to learn how to source the parts for your own DIY build, or to purchase a pre-assembled, pre-programmed kit:
-
-p.kit <a href="https://edgecollective.io/posts/notes/co2/"><img src="https://edgecollective.io/img/co2/rev_e_collection.png"></a>
-
-p.kit <a href="https://edgecollective.io/posts/notes/co2/">Build or Purchase a PVOS CO2 Sensor</a>
-
-p.blurb <b>Features</b>:
-
-ul
-li Bayou-CO2 compatible WiFi microcontroller
-li Can be programmed / re-programmed via Arduino IDE
-li No programming necessary for pre-asssembled version; can be configured to send data to Bayou-CO2 via wifi using a web browser on a phone or PC.
-li Long-range, low-power radio transmission via <a href="https://en.wikipedia.org/wiki/LoRa">LoRa radio</a>, to account for buildings where WiFi access is limited
-li Atmospheric pressure sensor to increase CO2 sensor accuracy
-li 'Force calibration' procedure and battery backup to allow for calibrating sensor using outdoor air
-li Optional microphone (sound level only, no voice) to help disambiguate human-associated CO2 from other local ambient sources
-li Designed to fit into an inexpensive, plastic case (included in kit) in accordance with sensor manufacturer guidelines around optimal airflow to the sensor
 
 
 
