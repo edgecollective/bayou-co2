@@ -10,25 +10,11 @@ h1 You've created a new data feed!
 <pre><code>
  <b>Name:</b> "#{feed_name}"<br>
 <b>Public Key:</b> #{feed_pubkey} <br>
-<b>Private Key:</b> #{private_key}
+<b>Private Key:</b> #{private_key} <br>
+<b>Feed Home Page:</b> <a href="/data/#{feed_pubkey}">http://#{base_url}/data/#{feed_pubkey}</a>
 </pre></code>
 
 p.blurb (<b>IMPORTANT</b>: you should immediately record the above information -- these keys won't be shown again!)
-
-h2 Next Steps
-
-p.blurb You can learn how to download and add to a feed's data by visiting its <b>Home Page</b>, which is constructed like this:
-
-pre
-    code http://#{base_url}/data/[Feed Public Key]
-
-p.blurb In the case of this field (<b>"#{feed_name}"</b>), its home page is:
-
-pre
-    code <a href="/data/#{feed_pubkey}">http://#{base_url}/data/#{feed_pubkey}</a>
-
-
-p.blurb (<b>PLEASE NOTE:</b> You will need this feed's <b>Private Key</b> in order to add new data to the feed.)
 
 <hr>
 
