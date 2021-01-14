@@ -17,13 +17,10 @@ html
 h1 Bayou-CO2 Feed: "#{feed_name}"
 <pre><code>
 <b>Feed Name:</b> "#{feed_name}"<br>
-<b>Public Key:</b> #{feed_pubkey}<br>
-<b>Home Page:</b> <a href="/co2/data/#{feed_pubkey}">http://#{base_url}/co2/data/#{feed_pubkey}</a>
-</pre></code>
-
-<pre><code>
-<b>All feed data</b>: <a href="/co2/data/#{feed_pubkey}/csv/">CSV</a> | <a href="/co2/data/#{feed_pubkey}/json/">JSON</a><br>
-<b>Latest datapoint only</b>: <a href="/co2/data/#{feed_pubkey}/latest/">JSON</a>
+<b>Feed Public Key:</b> #{feed_pubkey}<br>
+<b>Feed Home Page:</b> <a href="/co2/data/#{feed_pubkey}">http://#{base_url}/co2/data/#{feed_pubkey}</a><br>
+<b>All Feed Data</b>: <a href="/co2/data/#{feed_pubkey}/csv/">CSV</a> | <a href="/co2/data/#{feed_pubkey}/json/">JSON</a><br>
+<b>Latest Datapoint Only</b>: <a href="/co2/data/#{feed_pubkey}/latest/">JSON</a>
 </pre></code>
 
 canvas#myChart
