@@ -4,22 +4,73 @@ html
         meta(charset='UTF-8')
         title Bayou
         link(rel='stylesheet', href='/style.css')
-
+        //script(src='https://cdn.jsdelivr.net/npm/chart.js@2.8.0')
+        //script(src='js/dist/Char.min.js')
+        script(src='https://cdn.jsdelivr.net/npm/luxon@1.25.0/build/global/luxon.min.js')
+        script(src='https://cdn.jsdelivr.net/npm/chart.js@2.9.3')
+        //script(src='https://cdn.jsdelivr.net/npm/luxon@1.22.1')
+        script(src='https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@0.2.1')
 <a href="/co2">Back to Bayou-CO2</a>
 
 <hr>
 
-h1 Home Page for Bayou-CO2 Feed: "#{feed_name}"
-
+h1 Bayou-CO2 Feed: "#{feed_name}"
 <pre><code>
-<b>Name:</b> "#{feed_name}"<br>
-<b>Public Key:</b> #{feed_pubkey} <br>
-<b>Private Key:</b> [Secret]<br>
+<b>Feed Name:</b> "#{feed_name}"<br>
+<b>Public Key:</b> #{feed_pubkey}<br>
 <b>Home Page:</b> <a href="/co2/data/#{feed_pubkey}">http://#{base_url}/co2/data/#{feed_pubkey}</a>
 </pre></code>
 
-h1 Downloading Data:
+<pre><code>
+<b>All feed data</b>: <a href="/co2/data/#{feed_pubkey}/csv/">CSV</a> | <a href="/co2/data/#{feed_pubkey}/json/">JSON</a><br>
+<b>Latest datapoint only</b>: <a href="/co2/data/#{feed_pubkey}/latest/">JSON</a>
+</pre></code>
 
-p <b>All feed data</b>: <a href="/co2/data/#{feed_pubkey}/csv/">CSV</a> | <a href="/co2/data/#{feed_pubkey}/json/">JSON</a>
+canvas#myChart
 
-p <b>Most recent upload only</b>: <a href="/co2/data/#{feed_pubkey}/json/">JSON</a>
+    script.
+        fetch(`http://192.168.1.163:3000/co2/data/3aa34536c1dec59353c073d23116e7b33a1988129f3042ba/json/`)
+        .then(response => response.json())
+        .then(bdata => {
+            var co2_vs_time = [];
+            for(var i = 0; i < bdata.length; i++) {
+            var thisco2 = bdata[i].co2;
+            var timeutc = bdata[i].created;
+            var localtime = luxon.DateTime.fromISO(timeutc).toLocal().toString();
+
+            //console.log(luxtime);
+            co2_vs_time.push({"t":localtime,"y":thisco2})
+            //console.log(luxon.DateTime.fromISO(bdata[i].created));
+            }
+            //console.log(co2_vs_time);
+            
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+            datasets: [{
+            label: 'CO2 (PPM)',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: co2_vs_time
+            }]
+            },
+            // Configuration options go here
+            options: {
+            scales: {
+            xAxes: [{
+            type: 'time',
+            distribution: 'linear',
+            ticks: {
+            major: {
+            enabled: true, // <-- This is the key line
+            fontStyle: 'bold', //You can also style these values differently
+            fontSize: 14, //You can also style these values differently
+            },
+            },
+            }],
+            },
+            zone: "America/NewYork"
+            }
+            });
+        });

@@ -9,17 +9,17 @@ h1 <a href="/co2">Bayou-CO2</a>
 
 body
 
-p.subheading Easier Open Source CO2 Monitoring
+p.subheading Easier, Open Source CO2 Monitoring!
 
 p.blurb <b>Motivation.</b> <a href="/co2">Bayou-CO2</a> is designed to provide a simple, non-proprietary, 'open science' approach to capturing, storing, and retrieving CO2 sensor data. We created Bayou-CO2 when inspired by recent work (e.g. by <a href="https://www.medrxiv.org/content/10.1101/2020.09.09.20191676v1.full.pdf">Peng and Jimenez, Sep 9 2020</a>) indicating that monitoring indoor CO2 levels might (in some contexts) help to assess the risk of airborne SARS-CoV-2 transmission.  
 
 p.blurb <b>Funding</b>. We rely on donations and pay-as-you-can arrangements to support data hosting, as well as hardware and software development. To help keep this site running, please visit our site on Open Collective <a href="https://opencollective.com/edgecollective">here</a>. Cheers!
 
-p.blurb <b>Getting started.</b> You can get CO2 data online using Bayou-CO2 in 3 main steps:
-ul
-li <a href="#step1">Step 1: Set up a free CO2 data feed</a>
-li <a href="#step2">Step 2: Set up a compatible CO2 monitor</a>
-li <a href="#step3">Step 3: View or download your CO2 data</a>
+//p.blurb <b>Getting started.</b> You can get CO2 data online using Bayou-CO2 in 3 main steps:
+//ul
+//li <a href="#step1">Step 1: Set up a free CO2 data feed</a>
+//li <a href="#step2">Step 2: Set up a compatible CO2 monitor</a>
+//li <a href="#step3">Step 3: View or download your CO2 data</a>
 
 <hr>
 
@@ -38,7 +38,10 @@ form(action='/co2/manage' method='POST')
 
 h2 <a name="step2"></a> Step 2: Set up a compatible CO2 monitor
 
-p.blurb <b>General guidelines.</b> You can send data to Bayou via <b>any device</b> that is capable of performing an HTTP POST. This includes Python scripts on PCs, as well as many available programmable microcontrollers. You can find general guidelines for how to construct the proper HTTP POST format, with some code examples, <a href="">here</a>.
+p.blurb <b>General guidelines for setting up your own hardware</b>. Bayou-CO2 is agnostic with respect to what hardware sends it data -- you can send data to Bayou via <b>any</b> device that is capable of performing an HTTP POST. This includes Python scripts on PCs, as well as many available programmable microcontrollers. You can find general guidelines for how to construct the proper HTTP POST format, with some code examples, <a href="">here</a>.
+
+p.kit <img src="/images/compatibility.png">
+
 
 p.blurb <b>PVOS CO2 Monitor. </b>To make things easier for folks, we have developed an <a href="https://edgecollective.io/posts/notes/co2/">Open Hardware CO2 monitoring kit</a>, based on the popular WiFi+Bluetooth <a href="https://en.wikipedia.org/wiki/ESP32">Espressif ESP32 microcontroller</a> and the <a href="https://www.sensirion.com/en/environmental-sensors/carbon-dioxide-sensors/carbon-dioxide-sensors-co2/">Sensiron SCD30 CO2 sensor</a>.  You can either purchase the parts on your own and follow the build instructions we've put together, or buy a pre-assembled and pre-programmed device from us.  Click below to learn how to source the parts for your own DIY build, or to purchase a pre-assembled, pre-programmed kit:
 

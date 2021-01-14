@@ -13,7 +13,7 @@ exports.getPage = function(req, res, next) {
 
 exports.getPage = function(req, res, next) {
     var feed_id = req.body.feed_id;
-    var target_url = '/data/'.concat(feed_id.toString());
+    var target_url = '/co2/data/'.concat(feed_id.toString());
     res.redirect(target_url);
 }
 
