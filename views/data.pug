@@ -29,7 +29,7 @@ h1 Bayou-CO2 Feed: "#{feed_name}"
 canvas#myChart
 
     script.
-        fetch(`http://192.168.1.163:3000/co2/data/3aa34536c1dec59353c073d23116e7b33a1988129f3042ba/json/`)
+        fetch(`/co2/data/#{feed_pubkey}/json/`)
         .then(response => response.json())
         .then(bdata => {
             var co2_vs_time = [];
