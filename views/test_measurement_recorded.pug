@@ -9,8 +9,10 @@ html
 
 p.banner Measurement recorded!
 p.banner  <b>Feed Public Key</b>: #{feed_pubkey}
-p.banner  <b>CO2 Value</b>: #{co2_value} 
+p.banner  <b>New CO2 Value</b>: #{co2_value} 
 
-<hr>
+p.blurb You can now view your data at your Feed's Home Page:
 
-p Back to <a href="/co2">Bayou-CO2 Home Page</a>
+li.boxsmaller <b>Feed Home Page:</b> <a href="/co2/data/#{feed_pubkey}">http://#{base_url}/co2/data/#{feed_pubkey}</a>
+
+p Or go back to <a href="/co2">Bayou-CO2 Home Page</a>

@@ -3,6 +3,9 @@ const fs = require('fs');
 const fastcsv = require("fast-csv");
 const CsvParser = require("json2csv").Parser;
 
+require('dotenv').config({ path: __dirname + '/.env' })
+var base_url = process.env['BASE_URL']
+
 /*
 exports.getPage = function(req, res, next) {
     var feed_id = req.body.feed_id;
@@ -96,7 +99,7 @@ if (dataValid)  {
             res.status(400).send(error);
         } else {
             console.log(co2);
-            res.status(200).render('test_measurement_recorded',{feed_pubkey:feed_pubkey,co2_value:co2});
+            res.status(200).render('test_measurement_recorded',{feed_pubkey:feed_pubkey,base_url:base_url,co2_value:co2});
             //res.status(200).send('Measurement recorded\n');    
         }
     });
