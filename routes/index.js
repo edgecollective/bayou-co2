@@ -23,7 +23,7 @@ router.get('/co2/', function(req,res, next){
     res.render('bayou_explained');
       });
 
-router.get('/about/', function(req,res, next){
+router.get('/co2/about/', function(req,res, next){
     res.render('about');
       });
 
