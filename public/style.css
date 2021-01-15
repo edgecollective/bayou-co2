@@ -117,12 +117,25 @@ display: block;
     display: block;
     padding: 10px;
     #width:max-content;
-    font-size: 18px;
+    font-size: 20px;
     width: fit-content(10em);
     #margin-left: 30px;
     #min-width: 100px;
     #margin-bottom: 5px;
 }
+
+.donations{
+    background-color: #eee;
+    border: 1px solid #999;
+    display: block;
+    padding: 10px;
+    width:max-content;
+    font-size: 20px;
+    width: fit-content(10em);
+    margin-left: 30px;
+    #margin-bottom: 5px;
+}
+
 
 .boxsmaller{
     background-color: #eee;
