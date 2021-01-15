@@ -7,12 +7,11 @@ html
 
 //h1 data.pvos.org
 
-p.banner Measurement recorded!
-p.banner  <b>Feed Public Key</b>: #{feed_pubkey}
-p.banner  <b>New CO2 Value</b>: #{co2_value} 
-
-p.blurb You can now view your data at your Feed's Home Page:
+h2 Measurement recorded!
 
 li.boxsmaller <b>Feed Home Page:</b> <a href="/co2/data/#{feed_pubkey}">http://#{base_url}/co2/data/#{feed_pubkey}</a>
+li.boxsmaller  <b>New CO2 data point</b>: #{co2_value} 
 
-p Or go back to <a href="/co2">Bayou-CO2 Home Page</a>
+<hr>
+
+p.blurb Back to <a href="/co2">Bayou-CO2 Home Page</a>
