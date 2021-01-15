@@ -14,14 +14,13 @@ html
 
 <hr>
 
-h1 Bayou-CO2 Feed: "#{feed_name}"
-<pre><code>
-<b>Feed Name:</b> "#{feed_name}"<br>
-<b>Feed Public Key:</b> #{feed_pubkey}<br>
-<b>Feed Home Page:</b> <a href="/co2/data/#{feed_pubkey}">http://#{base_url}/co2/data/#{feed_pubkey}</a><br>
-<b>All Feed Data</b>: <a href="/co2/data/#{feed_pubkey}/csv/">CSV</a> | <a href="/co2/data/#{feed_pubkey}/json/">JSON</a><br>
-<b>Latest Datapoint Only</b>: <a href="/co2/data/#{feed_pubkey}/latest/">JSON</a>
-</pre></code>
+h2 Bayou-CO2 Feed: "#{feed_name}"
+
+li.boxsmaller <b>Feed Name:</b> "#{feed_name}"
+li.boxsmaller <b>Feed Public Key:</b> #{feed_pubkey}
+li.boxsmaller <b>Feed Home Page:</b> <a href="/co2/data/#{feed_pubkey}">http://#{base_url}/co2/data/#{feed_pubkey}</a>
+li.boxsmaller <b>Download All Feed Data</b>: <a href="/co2/data/#{feed_pubkey}/csv/">CSV</a> | <a href="/co2/data/#{feed_pubkey}/json/">JSON</a>
+li.boxsmaller <b>Download Latest Datapoint Only</b>: <a href="/co2/data/#{feed_pubkey}/latest/">JSON</a>
 
 canvas#myChart
 

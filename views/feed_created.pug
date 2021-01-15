@@ -7,12 +7,10 @@ html
 
 h1 You've created a new data feed!
 
-<pre><code>
- <b>Name:</b> "#{feed_name}"<br>
-<b>Public Key:</b> #{feed_pubkey} <br>
-<b>Private Key:</b> #{private_key} <br>
-<b>Home Page:</b> <a href="/co2/data/#{feed_pubkey}">http://#{base_url}/co2/data/#{feed_pubkey}</a>
-</pre></code>
+li.boxsmaller <b>Feed Name:</b> "#{feed_name}"
+li.boxsmaller <b>Feed Public Key:</b> #{feed_pubkey}
+li.boxsmaller <b>Feed Private Key:</b> #{private_key}
+li.boxsmaller <b>Feed Home Page:</b> <a href="/co2/data/#{feed_pubkey}">http://#{base_url}/co2/data/#{feed_pubkey}</a>
 
 p.blurb (<b>IMPORTANT</b>: you should immediately record the above information -- these keys won't be shown again!)
 
