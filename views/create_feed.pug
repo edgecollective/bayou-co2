@@ -85,18 +85,7 @@ p.kit <a href="https://edgecollective.io/posts/notes/co2/"><img src="/images/rev
 
 h2 <a name="step3"></a>3. View your CO2 data
 
-p.subheading <b>... via simple links:</b>
-
-p.blurb You can retrieve CO2 data (as graphs, JSON, and CSV) using your feed's <b>PUBLIC KEY</b>.  They'll always be available (and free for you to share) at the following links:
-
-pre
-    code
-        p <b>Feed Home:</b> http://data.pvos.org/co2/data/[PUBLIC KEY] <br>
-        p <b>Feed as JSON:</b> http://data.pvos.org/co2/data/[PUBLIC KEY]/json <br>
-        p <b>Feed as CSV:</b> http://data.pvos.org/co2/data/[PUBLIC KEY]/csv <br>
-        //p <b>Feed graphs:</b> http://data.pvos.org/co2/data/[PUBLIC KEY]/graphs <br>
-
-p.subheading <b>... or via a form:</b>
+p.subheading <b>... via a form:</b>
 
 p.blurb Or, you can enter your <b>PUBLIC KEY</b> in the form below to go to its home page. At the feed's home page, you'll find links to graphs, JSON, and CSV for the feed data.
 
@@ -109,6 +98,17 @@ form(action='/co2/formData' method='POST')
         br
         // <button type ="reset">Reset</button>
         button(type='submit') View Data
+
+p.subheading <b>... or via simple links:</b>
+
+p.blurb You can retrieve CO2 data (as graphs, JSON, and CSV) using your feed's <b>PUBLIC KEY</b>.  They'll always be available (and free for you to share) at the following links:
+
+pre
+    code
+        p <b>Feed Home:</b> http://data.pvos.org/co2/data/[PUBLIC KEY] <br>
+        p <b>Feed as JSON:</b> http://data.pvos.org/co2/data/[PUBLIC KEY]/json <br>
+        p <b>Feed as CSV:</b> http://data.pvos.org/co2/data/[PUBLIC KEY]/csv <br>
+        //p <b>Feed graphs:</b> http://data.pvos.org/co2/data/[PUBLIC KEY]/graphs <br>
 
 <hr>
 
