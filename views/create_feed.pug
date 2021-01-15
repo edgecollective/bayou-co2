@@ -5,45 +5,68 @@ html
         title Bayou
         link(rel='stylesheet', href='/style.css')
 
-h1 <a href="/co2">Bayou-CO2</a>
-
 body
 
-p.subheading Easier, Open Source CO2 Monitoring!
+//<img src="/images/bayou_favicon.png">
 
-p.blurb <b>Motivation.</b> <a href="/co2">Bayou-CO2</a> is designed to provide a simple, non-proprietary, 'open science' approach to capturing, storing, and retrieving CO2 sensor data. We created Bayou-CO2 when inspired by recent work (e.g. by <a href="https://www.medrxiv.org/content/10.1101/2020.09.09.20191676v1.full.pdf">Peng and Jimenez, Sep 9 2020</a>) indicating that monitoring indoor CO2 levels might (in some contexts) help to assess the risk of airborne SARS-CoV-2 transmission.  
+h1 <a href="/co2">Bayou-CO2</a><br>
 
-p.blurb <b>Funding</b>. We rely on donations and pay-as-you-can arrangements to support data hosting, as well as hardware and software development. To help keep this site running, please visit our site on Open Collective <a href="https://opencollective.com/edgecollective">here</a>. Cheers!
+p <b><a href="/about">Bayou-CO2</a></b> provides an easy, 'open science' approach to storage and retrieval of CO2 sensor data. 
 
-//p.blurb <b>Getting started.</b> You can get CO2 data online using Bayou-CO2 in 3 main steps:
-//ul
-//li <a href="#step1">Step 1: Set up a free CO2 data feed</a>
-//li <a href="#step2">Step 2: Set up a compatible CO2 monitor</a>
-//li <a href="#step3">Step 3: View or download your CO2 data</a>
+<pre><code>
+li Easy to set up and use
+li Send CO2 data from any device via HTTP POST
+li Access data as graphs, CSV, or JSON
+li <a href="">Source code available</a> (GPL 3.0)<br>
+li Funded through <a href="">donations</a> (Cheers!)
+</pre></code>
 
-<hr>
+h2 <a name="step1"></a> 1. Create a new CO2 data feed on Bayou-CO2
 
-h2 <a name="step1"></a> Step 1: Set up a new CO2 data feed
-
+p.blurb Enter a name for your new feed, and you'll be provided with your new feed's <b>PUBLIC KEY</b> and <b>PRIVATE KEY</b>. Copy them down somewhere safe! (Read more about this <a href=""e>here</a>.)
 form(action='/co2/manage' method='POST')
     fieldset
         h3 Create a New CO2 Data Feed
         label New Feed Name: 
-        input#feed_name(type='text' name='feed_name' placeholder='Living room, Nortwest side' required='')
+        input#feed_name(type='text' name='feed_name' placeholder='Living room, Northwest side' required='')
         br
         br
         button(type='submit') Create new feed
 
 <hr>  
 
-h2 <a name="step2"></a> Step 2: Set up a compatible CO2 monitor
+h2 <a name="step2"></a> 2. Send CO2 data to your new feed
 
-p.blurb <b>General guidelines for setting up your own hardware</b>. Bayou-CO2 is agnostic with respect to what hardware sends it data -- you can send data to Bayou via <b>any</b> device that is capable of performing an HTTP POST. This includes Python scripts on PCs, as well as many available programmable microcontrollers. You can find general guidelines for how to construct the proper HTTP POST format, with some code examples, <a href="">here</a>.
+p.subheading <b>... via the browser (quick test)</b>
+
+p.blurb You can send test CO2 data to your new feed by entering your feed's <b>PUBLIC KEY</b> and <b>PRIVATE KEY</b>:
+
+form(action='/co2/manage' method='POST')
+    fieldset
+        h3 Send Test Data To Your CO2 Data Feed
+        label Feed Public Key: 
+        input#feed_name(type='text' name='feed_name' placeholder='Your Feed\'s PUBLIC KEY' required='')
+        br
+        br
+        label Feed Private Key: 
+        input#feed_name(type='text' name='feed_name' placeholder='Your Feed\'s PRIVATE KEY' required='')
+        br
+        br
+        label Test CO2 Data: 
+        input#feed_name(type='text' name='feed_name' placeholder='410' required='')
+        br
+        br
+        button(type='submit') Send test data
+
+p.subheading <b>... via your favorite hardware</b>
+
+p.blurb  You can use a wide variety of microcontrollers, CO2 sensors, and programming frameworks to send data to Bayou-CO2. Read about how to do this <a href="">here</a>. 
 
 p.kit <img src="/images/compatibility.png">
 
+p.subheading <b>... or via our hardware (pre-assembled or DIY)</b>
 
-p.blurb <b>PVOS CO2 Monitor. </b>To make things easier for folks, we have developed an <a href="https://edgecollective.io/posts/notes/co2/">Open Hardware CO2 monitoring kit</a>, based on the popular WiFi+Bluetooth <a href="https://en.wikipedia.org/wiki/ESP32">Espressif ESP32 microcontroller</a> and the <a href="https://www.sensirion.com/en/environmental-sensors/carbon-dioxide-sensors/carbon-dioxide-sensors-co2/">Sensiron SCD30 CO2 sensor</a>.  You can either purchase the parts on your own and follow the build instructions we've put together, or buy a pre-assembled and pre-programmed device from us.  Click below to learn how to source the parts for your own DIY build, or to purchase a pre-assembled, pre-programmed kit:
+p.blurb We have developed an <a href="https://edgecollective.io/posts/notes/co2/">Open Hardware CO2 monitoring kit</a>, based on the popular WiFi+Bluetooth <a href="https://en.wikipedia.org/wiki/ESP32">Espressif ESP32 microcontroller</a> and the <a href="https://www.sensirion.com/en/environmental-sensors/carbon-dioxide-sensors/carbon-dioxide-sensors-co2/">Sensiron SCD30 CO2 sensor</a>.  You can either purchase the parts on your own and follow the build instructions we've put together, or buy a pre-assembled and pre-programmed device from us.  Click below to learn how to source the parts for your own DIY build, or to purchase a pre-assembled, pre-programmed kit:
 
 p.kit <a href="https://edgecollective.io/posts/notes/co2/"><img src="https://edgecollective.io/img/co2/rev_e_collection.png"></a>
 
@@ -51,13 +74,13 @@ p.kit <a href="https://edgecollective.io/posts/notes/co2/">Build or Purchase a P
 
 <hr>  
 
-h2 <a name="step3"></a>Step 3: View your CO2 data
+h2 <a name="step3"></a>3. View your CO2 data
 
 form(action='/co2/formData' method='POST')
     fieldset
         h3 View an Existing CO2 Data Feed
-        label View Data for Feed w/ Key: 
-        input#feed_id_page(type='text' name='feed_id' placeholder='421f1baf5ceccaaa9ad0891f4c96710062106b92189bf907' required='')
+        label Feed Public Key: 
+        input#feed_id_page(type='text' name='feed_id' placeholder='Your Feed\'s Public Key' required='')
         br
         br
         // <button type ="reset">Reset</button>

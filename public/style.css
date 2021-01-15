@@ -1,7 +1,7 @@
 body{
     background-color: #cce6ff;
-    #font-family:sans-serif;
-    font-size: 15px;
+    font-family:sans-serif;
+    font-size: 18px;
     width:80%;
     max-width:800px;
 }
@@ -17,11 +17,11 @@ header{
 
 .subheading {
     #padding-left: 20px;
-    #margin-left: 20px;
+    margin-left: 20px;
 	margin-top: 2px;
 	text-align: left;
     #background-color: #80bfff;
-    font-size: 18px;
+    font-size: 19px;
     font-weight: bold;
     width: 80%;
 }
@@ -35,7 +35,7 @@ h2{
 
 h3{
 	margin-top: 2px;
-	text-align: center;
+	text-align: left;
     #background-color: #80bfff;
     font-size: 18px;
 }
@@ -66,7 +66,7 @@ form{
 	width:max-content;
 	display: inline-block;
     margin: 10px;
-    text-align:center;
+    text-align:left;
     background-color: pink;
 }
 
@@ -87,17 +87,19 @@ label{
 }
 img{
     max-width:40%;
-margin-left:20px;
+#margin-left:20px;
 max-height:150px;
 display: block;
   #margin-left: auto;
   #margin-right: auto;
 }
+
 .blurb{
     #background-color: lightgreen;
     width:100%;
-    font-size: 15px;
-    margin-left: 20px;
+    font-size: 16px;
+    line-height: 1.4;
+    margin-left: 40px;
 }
 
 .tinyblurb{
@@ -111,7 +113,7 @@ display: block;
     #background-color:  lightgreen;
     width:100%;
     font-size: 16px;
-    margin-left: 20px;
+    margin-left: 40px;
     #text-align:center;
 }
 
