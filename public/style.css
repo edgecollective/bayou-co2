@@ -15,16 +15,19 @@ header{
 	font-size: 15px;
 }
 
-.subheading {
-    #padding-left: 20px;
-    margin-left: 40px;
-	margin-top: 30px;
-	text-align: left;
-    #background-color: #80bfff;
-    font-size: 25px;
-    font-weight: bold;
-    width: 80%;
+.banner {
+    background-color: #eee;
+    border: 1px solid #999;
+    display: block;
+    padding: 10px;
+    width:max-content;
+    font-size: 18px;
+    width: fit-content(10em);
+    margin-left: 5px;
+    margin-bottom: 5px;
 }
+
+
 
 h2{
 	margin-top: 2px;
