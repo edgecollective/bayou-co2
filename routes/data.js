@@ -12,8 +12,7 @@ router.get('/:feed_pubkey/json/',data_feeds.getJSON);
 router.get('/:feed_pubkey/csv/',data_feeds.getCSV);
 
 router.post('/:feed_pubkey/', data_feeds.postNewMeasurement);
-0
-router.get('/:feed_pubkey/latest/',data_feeds.getLatestMeasurement);
 
+router.get('/:feed_pubkey/latest/',data_feeds.getLatestMeasurement);
 
 module.exports = router;

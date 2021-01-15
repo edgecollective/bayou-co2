@@ -52,17 +52,17 @@ p.subheading <b>... via the browser (quick test):</b>
 
 p.blurb You can send test CO2 data to your new feed by entering your feed's <b>PUBLIC KEY</b> and <b>PRIVATE KEY</b>:
 
-form(action='/co2/manage' method='POST')
+form(action='/co2/formdata/test/' method='POST')
     fieldset
         h3 Send Test Data To Your CO2 Data Feed
         label Feed Public Key: 
-        input#feed_name(type='text' name='feed_name' placeholder='Your Feed\'s PUBLIC KEY' required='')
+        input#feed_name(type='text' name='feed_pubkey' placeholder='Your Feed\'s PUBLIC KEY' required='')
         br
         label Feed Private Key: 
-        input#feed_name(type='text' name='feed_name' placeholder='Your Feed\'s PRIVATE KEY' required='')
+        input#feed_name(type='text' name='feed_privkey' placeholder='Your Feed\'s PRIVATE KEY' required='')
         br
         label Test CO2 Data: 
-        input#feed_name(type='text' name='feed_name' placeholder='410' required='')
+        input#feed_name(type='text' name='co2' placeholder='410' required='')
         br
         br
         button(type='submit') Send test data

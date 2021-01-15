@@ -6,6 +6,10 @@ var form_data_feeds = require('../controllers/formDataControllers');
 
 
 router.post('/',form_data_feeds.getPage);
+router.post('/test/', form_data_feeds.postTestMeasurement);
+
+
+// implemented?
 router.post('/csv/', form_data_feeds.getCSV);
 router.post('/json/', form_data_feeds.getJSON);
 
