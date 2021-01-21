@@ -12,8 +12,23 @@ const getFeedDetails = (feed_pubkey) => db.query('SELECT * FROM feeds WHERE publ
     console.log("couldn't find feed_id for that key!");
   });
 
+const restructureJSON = (inputJSON) => {
+    var structjson=[];
+var alldata = inputJSON;
+            alldata.forEach(element => {
+                //console.log(element);
+                var id = element.id;
+                var timestamp = element.created;
+                //need to make this non-manual
+                var parameters = {"co2":element.co2,"tempc":element.tempc,"humidity":element.humidity,"mic":element.mic,"auxpressure":element.auxpressure,"auxtempc":element.auxtemp,"aux001":element.aux001,"aux002":element.aux002};
+                structjson.push({"id":id, "timestamp":timestamp,parameters});
+            });
+   return(structjson);
+}
 
 exports.getJSON = (req,res,next) =>  {
+
+    var parameters = ["id","tempc","humidity","mic","auxpressure","auxtempc","aux001","aux002","created"];
 
     var feed_pubkey = String(req.params.feed_pubkey);
 
@@ -24,8 +39,7 @@ exports.getJSON = (req,res,next) =>  {
 
         db.query('SELECT * FROM measurements WHERE feed_id = $1', [feed_id], (err, results) => {
             if (err) throw err
-
-            res.status(200).json(results.rows);
+            res.status(200).json(restructureJSON(results.rows));
 
         });
     })
@@ -236,7 +250,9 @@ exports.getLatestMeasurement = function(req, res, next) {
     db.query(query, (error, results) => {
         if (error)
             throw error;
-        res.status(200).json(results.rows);
+
+        
+        res.status(200).json(restructureJSON(results.rows));
     });
 }).catch((err) => {
     console.log("couldn't get latest measurement for this feed!");

@@ -9,7 +9,19 @@ var passport = require('./config/passport');
 var networkUtil = require('./utils/networkUtil');
 var favicon = require('serve-favicon');
 var router = express.Router();
+const cors = require('cors');
 
+const whitelist = ['http://example1.com', 'http://example2.com']
+const corsOptions = {
+    origin: function (origin, callback) {
+      if (whitelist.indexOf(origin) !== -1) {
+        callback(null, true)
+      } else {
+        callback(new Error('Not allowed by CORS'))
+      }
+    },
+  }
+  
 // Include routes
 var indexRouter = require('./routes/index');
 var dataRouter = require('./routes/data');
