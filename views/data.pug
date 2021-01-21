@@ -30,10 +30,12 @@ canvas#myChart
         .then(bdata => {
             var co2_vs_time = [];
             for(var i = 0; i < bdata.length; i++) {
-            var thisco2 = bdata[i].co2;
-            var timeutc = bdata[i].created;
+            var timeutc = bdata[i].timestamp;
+            var parameters=bdata[i].parameters;
+            var thisco2 = parameters.co2;
             var localtime = luxon.DateTime.fromISO(timeutc).toLocal().toString();
-
+            //console.log(thisco2,timeutc);
+            
             //console.log(luxtime);
             co2_vs_time.push({"t":localtime,"y":thisco2})
             //console.log(luxon.DateTime.fromISO(bdata[i].created));

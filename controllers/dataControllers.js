@@ -15,6 +15,8 @@ const getFeedDetails = (feed_pubkey) => db.query('SELECT * FROM feeds WHERE publ
 
 exports.getJSON = (req,res,next) =>  {
 
+    var parameters = ["id","tempc","humidity","mic","auxpressure","auxtempc","aux001","aux002","created"];
+
     var feed_pubkey = String(req.params.feed_pubkey);
 
     getFeedDetails(String(req.params.feed_pubkey))
@@ -24,8 +26,18 @@ exports.getJSON = (req,res,next) =>  {
 
         db.query('SELECT * FROM measurements WHERE feed_id = $1', [feed_id], (err, results) => {
             if (err) throw err
-
-            res.status(200).json(results.rows);
+            var structjson = [];
+            var alldata = results.rows;
+            alldata.forEach(element => {
+                //console.log(element);
+                var id = element.id;
+                var timestamp = element.created;
+                //need to make this non-manual
+                var parameters = {"co2":element.co2,"tempc":element.tempc,"humidity":element.humidity,"mic":element.mic,"auxpressure":element.auxpressure,"auxtempc":element.auxtemp,"aux001":element.aux001,"aux002":element.aux002};
+                structjson.push({"id":id, "timestamp":timestamp,parameters});
+            });
+            console.log(structjson);
+            res.status(200).json(structjson);
 
         });
     })
