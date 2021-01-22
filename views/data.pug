@@ -28,14 +28,15 @@ canvas#myChart
         fetch(`/co2/data/#{feed_pubkey}/json/`)
         .then(response => response.json())
         .then(bdata => {
+            var data = bdata.data;
             var co2_vs_time = [];
-            for(var i = 0; i < bdata.length; i++) {
-            var timeutc = bdata[i].timestamp;
-            var parameters=bdata[i].parameters;
+            for(var i = 0; i < data.length; i++) {
+            var timeutc = data[i].timestamp;
+            var parameters=data[i].parameters;
             var thisco2 = parameters.co2;
             var localtime = luxon.DateTime.fromISO(timeutc).toLocal().toString();
             //console.log(thisco2,timeutc);
-            
+             
             //console.log(luxtime);
             co2_vs_time.push({"t":localtime,"y":thisco2})
             //console.log(luxon.DateTime.fromISO(bdata[i].created));
