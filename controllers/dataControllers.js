@@ -12,7 +12,7 @@ const getFeedDetails = (feed_pubkey) => db.query('SELECT * FROM feeds WHERE publ
     console.log("couldn't find feed_id for that key!");
   });
 
-const restructureJSON = (feed_pubkey, inputJSON) => {
+const restructureJSON = (feed_pubkey, feed_name, inputJSON) => {
     var structjson=[];
 var alldata = inputJSON;
             alldata.forEach(element => {
@@ -24,7 +24,7 @@ var alldata = inputJSON;
                 var parameters = {"co2":element.co2,"tempc":element.tempc,"humidity":element.humidity,"mic":element.mic,"auxpressure":element.auxpressure,"auxtempc":element.auxtemp,"aux001":element.aux001,"aux002":element.aux002};
                 structjson.push({"id":id, "timestamp":timestamp,parameters});
             });
-   return({"feed_pubkey":feed_pubkey,"data": structjson});
+   return({"feed_pubkey":feed_pubkey,"feed_name":feed_name,"data": structjson});
 }
 
 exports.getJSON = (req,res,next) =>  {
@@ -37,10 +37,11 @@ exports.getJSON = (req,res,next) =>  {
     .then((feed_params) => {
 
     var feed_id = feed_params.feed_id;
+    var feed_name = feed_params.name;
 
         db.query('SELECT * FROM measurements WHERE feed_id = $1', [feed_id], (err, results) => {
             if (err) throw err
-            res.status(200).json(restructureJSON(feed_pubkey, results.rows));
+            res.status(200).json(restructureJSON(feed_pubkey, feed_name, results.rows));
 
         });
     })
@@ -244,14 +245,16 @@ exports.getLatestMeasurement = function(req, res, next) {
     getFeedDetails(String(req.params.feed_pubkey))
     .then((feed_params) => {
         
+        var feed_pubkey = req.params.feed_pubkey
         var feed_id = feed_params.feed_id;
+        var feed_name = feed_params.name;
 
     const query = `SELECT * FROM measurements WHERE feed_id = ${feed_id}  ORDER BY created DESC LIMIT 1`;
 
     db.query(query, (error, results) => {
         if (error)
             throw error;
-        res.status(200).json(restructureJSON(feed_id, results.rows));
+            res.status(200).json(restructureJSON(feed_pubkey, feed_name, results.rows));
     });
 }).catch((err) => {
     console.log("couldn't get latest measurement for this feed!");
